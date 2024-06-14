@@ -5,9 +5,7 @@ import Pengembalian from "../models/pengembalianModel.js";
 export const getPeminjaman = async (req, res) => {
   try {
     const response = await Peminjaman.findAll({
-      include: {
-        model: Anggota,
-      },
+
     });
     res.status(200).json(response);
   } catch (error) {

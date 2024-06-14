@@ -4,9 +4,7 @@ import Pengarang from "../models/pengarangModel.js";
 export const getBuku = async (req, res) => {
   try {
     const response = await Buku.findAll({
-      include: {
-        model: Pengarang,
-      },
+
     });
     res.status(200).json(response);
   } catch (error) {

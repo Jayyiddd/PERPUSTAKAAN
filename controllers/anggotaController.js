@@ -1,4 +1,5 @@
 import Anggota from "../models/anggotaModel.js";
+import PeminjamanDetail from "../models/peminjamanDetail.js";
 import Peminjaman from "../models/peminjamanModel.js";
 
 export const getAnggota = async (req, res) => {
@@ -6,6 +7,9 @@ export const getAnggota = async (req, res) => {
     const response = await Anggota.findAll({
       include: {
         model: Peminjaman,
+        include: {
+          model: PeminjamanDetail
+        }
       },
     });
     res.status(200).json(response);

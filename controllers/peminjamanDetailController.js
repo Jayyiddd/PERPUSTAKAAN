@@ -4,9 +4,6 @@ import Peminjaman from "../models/peminjamanModel.js";
 export const getPeminjamanDetail = async (req, res) => {
   try {
     const response = await PeminjamanDetail.findAll({
-      include: {
-        model: Peminjaman,
-      },
     });
     res.status(200).json(response);
   } catch (error) {
